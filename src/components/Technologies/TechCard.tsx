@@ -1,6 +1,6 @@
 import type { Technology } from "./TechType";
 
-const TechCard = ({ technology, handleAddToStack }: { technology: Technology; handleAddToStack: (technology: Technology) => void }) => {
+const TechCard = ({ technology, handleAddToStack, isSelected }: { technology: Technology; handleAddToStack: (technology: Technology) => void; isSelected: boolean }) => {
     return (
         <div className="card bg-base-100 border border-gray-200 shadow-sm">
             <div className="card-body p-5">
@@ -42,9 +42,16 @@ const TechCard = ({ technology, handleAddToStack }: { technology: Technology; ha
                 </div>
                 <button
                     onClick={() => handleAddToStack(technology)}
-                    className="btn w-full bg-slate-950 text-white border-0 mt-4 rounded-2xl">
-                    Add to Stack
+                    className={`btn w-full mt-4 rounded-2xl border ${isSelected
+                        ? "bg-white text-slate-950 border-slate-950"
+                        : "bg-slate-950 text-white border-slate-950"
+                        }`}
+                    disabled={isSelected}
+                >
+                    {isSelected ? "Selected" : "Add to Stack"}
                 </button>
+
+
 
 
             </div>
