@@ -1,7 +1,9 @@
+import bannerimg from '../../assets/banner-stack.png'
+
 const Banner = () => {
     return (
-        <section>
-            <div className='container mx-auto flex justify-between items-center px-4 mt-20'>
+        <section className='py-20'>
+            <div className='container mx-auto flex justify-between items-center px-4'>
                 <div>
                     <h1 className="text-5xl font-bold">Build Your Ideal <br />
                         <span
@@ -22,8 +24,9 @@ const Banner = () => {
                         <button className="border border-gray-300 px-15 py-3 rounded-lg font-medium">Learn More</button>
                     </div>
                 </div>
-                <div>
 
+                <div>
+                    <img src={bannerimg} alt="Banner" className="w-full h-full object-cover" />
                 </div>
             </div>
         </section>
