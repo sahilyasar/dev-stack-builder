@@ -19,9 +19,9 @@ const Banner = () => {
                         next project.
                     </p>
                     <div className="mt-6 flex gap-4">
-                        <button className="bg-gradient-to-r from-orange-500 to-purple-500
-                         text-white px-5 py-3 rounded-lg font-medium">Explore Technologies</button>
-                        <button className="border border-gray-300 px-15 py-3 rounded-lg font-medium">Learn More</button>
+                        <button className=" btn bg-gradient-to-r from-orange-500 to-purple-500
+                         text-white px-5 py-5 rounded-lg font-medium">Explore Technologies</button>
+                        <button className="btn border border-gray-300 px-15 py-5 rounded-lg font-medium">Learn More</button>
                     </div>
                 </div>
 
