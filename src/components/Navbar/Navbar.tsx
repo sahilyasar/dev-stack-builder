@@ -1,7 +1,7 @@
 import logotext from "../../assets/logo-text.png"
 const Navbar = () => {
     return (
-        <nav >
+        <nav  className="sticky top-0 z-1  bg-white">
             <div className='mx-auto container flex items-center justify-between py-4 px-4'>
 
                 <div >

@@ -1,4 +1,6 @@
 import { Suspense } from "react"
+import { ToastContainer } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 import Banner from "./components/Banner/Banner"
 import Navbar from "./components/Navbar/Navbar"
 import Technologies from "./components/Technologies/Technologies"
@@ -13,6 +15,7 @@ function App() {
         <Technologies></Technologies>
       </Suspense>
       <Footer></Footer>
+      <ToastContainer position="top-right" />
 
     </>
   )

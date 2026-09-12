@@ -1,5 +1,6 @@
 import type { Technology } from "./TechType";
 import TechCard from "./TechCard";
+import { toast } from "react-toastify";
 
 import { use, useState } from "react";
 
@@ -15,20 +16,30 @@ const Technologies = () => {
     const [selectedTechnologies, setSelectedTechnologies] = useState<Technology[]>([]);
 
     const handleRemoveFromStack = (id: string) => {
+        const removedTechnology = selectedTechnologies.find((technology) => technology.id === id);
+        if (!removedTechnology) return;
+
         setSelectedTechnologies(
             selectedTechnologies.filter((technology) => technology.id !== id)
         );
+        toast.info(`${removedTechnology.name} is removed from the stack`);
+    };
+
+    const handleRemoveAll = () => {
+        setSelectedTechnologies([]);
+        toast.info("Stack cleared");
     };
 
     const handleAddToStack = (technology: Technology) => {
         const filteredTechnologies = selectedTechnologies.filter(
-            (item) => item.category !== technology.category
+            (item) => item.name !== technology.name
         );
 
         setSelectedTechnologies([
             ...filteredTechnologies,
             technology
         ]);
+        toast.success("✓ Added to Stack");
     };
 
 
@@ -69,6 +80,8 @@ const Technologies = () => {
                             Your Stack
                         </h3>
 
+
+
                         {selectedTechnologies.length === 0 ? (
                             <>
                                 <p className="text-sm text-gray-500 mb-5">
@@ -83,6 +96,10 @@ const Technologies = () => {
                             </>
                         ) : (
                             <div className="space-y-3 mt-4">
+
+                                <p className="text-sm text-gray-400">
+                                    {selectedTechnologies.length} Technology Selected
+                                </p>
 
                                 {selectedTechnologies.map((technology) => (
                                     <div
@@ -120,6 +137,16 @@ const Technologies = () => {
                                 ))}
 
                             </div>
+                        )}
+
+                        {selectedTechnologies.length > 0 && (
+                            <button
+                                type="button"
+                                onClick={() => handleRemoveAll()}
+                                className="btn btn-outline btn-error btn-sm mt-10 w-full rounded-lg py-5"
+                            >
+                                Remove All
+                            </button>
                         )}
 
                     </div>

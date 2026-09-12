@@ -1,21 +1,20 @@
+import logotext from "../../assets/logo-text.png"
+
 const Footer = () => {
     return (
         <footer className="border-t border-gray-100 bg-white mt-20">
             <div className="container mx-auto px-4 mt-10">
 
-               
+
                 <div className="grid grid-cols-1 gap-10 py-10 md:grid-cols-2 lg:grid-cols-4">
 
                     {/* Brand Section */}
                     <div>
                         <div className="flex items-center gap-2">
-                            <div className="flex h-6 w-6 items-center justify-center rounded-md bg-gradient-to-br from-purple-500 to-pink-500 text-xs font-bold text-white">
-                                DS
+                            <div className="h-8 w-auto">
+                                <img src={logotext} alt="" />
                             </div>
 
-                            <h2 className="text-lg font-bold text-gray-900">
-                                Dev <span className="text-pink-500">Stack</span>
-                            </h2>
                         </div>
 
                         <p className="mt-4 max-w-xs text-sm leading-6 text-gray-500">
