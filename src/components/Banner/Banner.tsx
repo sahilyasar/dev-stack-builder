@@ -2,7 +2,7 @@ import bannerimg from '../../assets/banner-stack.png'
 
 const Banner = () => {
     return (
-        <section className='py-20'>
+        <section>
             <div className='container mx-auto flex justify-between items-center px-4'>
                 <div>
                     <h1 className="text-5xl font-bold">Build Your Ideal <br />
