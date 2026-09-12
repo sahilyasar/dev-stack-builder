@@ -81,6 +81,7 @@ If I used the traditional fetching approach, I could use `useEffect` to fetch th
 React needs a unique `key` to identify each item in a list.
 
 It helps React understand which item was added, removed, or updated.
+
 ---
 
 ## 6. What is conditional rendering? Show one place you used it.
